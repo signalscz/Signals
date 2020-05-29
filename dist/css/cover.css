@@ -18,6 +18,10 @@ h3 {
   padding-top: 0.7em;
 }
 
+pre {
+  color: #ccc;
+}
+
 /* Custom default button */
 .btn-secondary,
 .btn-secondary:hover,
