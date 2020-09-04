@@ -240,7 +240,7 @@
       this.updateKey = Date.now();
     },
     template:'<div><h3>Tabulka</h3>' +
-        '<table class="table freeze-col table-bordered">' +
+        '<table class="table freeze-col table-bordered table-sm">' +
         '<tbody>' +
         '<analysis-row type="header" options="" v-bind="$props" :key="updateKey"></analysis-row>' +
         '<analysis-row type="blank" v-bind="$props" :key="updateKey"></analysis-row>' +
@@ -481,6 +481,17 @@
             </div>
         </div>
     </div>
+    <div v-if="status.message" class="row bottom-buffer">
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+                    <div v-if="status.type == 'ok' && status.message" class="alert alert-primary">{{status.message}}</div>
+                    <div v-if="status.type == 'success' && status.message" class="alert alert-success">{{status.message}}</div>
+                    <div v-if="status.type == 'error' && status.message" class="alert alert-danger">{{status.message}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
     <div v-if="testResults_count > 0" class="row bottom-buffer">
         <div class="col">
             <div class="card">
@@ -489,9 +500,6 @@
                     <div v-for="url in urlsList" class="card">
                         <div class="card-body">{{ url }}</div>
                     </div>
-                    <div v-if="status.type == 'ok' && status.message" class="alert alert-primary">{{status.message}}</div>
-                    <div v-if="status.type == 'success' && status.message" class="alert alert-success">{{status.message}}</div>
-                    <div v-if="status.type == 'error' && status.message" class="alert alert-danger">{{status.message}}</div>
                     <results-view v-bind:test-results="testResults" :key="testResults_count"></results-view>
                 </div>
             </div>
@@ -591,10 +599,12 @@
       }
     },
     mounted: function () {
-      //let lr = window.localStorage.getItem("lastResult");
+      let lr = window.localStorage.getItem("lastResult");
       try {
         lr = JSON.parse(lr);
         this.testResults = lr;
+        this.testResults_count = Object.keys(this.testResults).length;
+        this.inputUrls = Object.keys(this.testResults).join('\n');
       } catch (e) {
         console.error(e);
       }
