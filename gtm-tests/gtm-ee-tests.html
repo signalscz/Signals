@@ -1114,9 +1114,11 @@
       // add dataLayer push onclicks on each button
       document.addEventListener('DOMContentLoaded', function (event) {
         document.querySelectorAll("button[data-data-layer-push]").forEach(function (e) {
-          onclick = function (ec) { window.dataLayer.push(window[e.dataset.dataLayerPush]); }
+          onclick = function (ec) {
+            window.dataLayer.push(window[ec.target.dataset.dataLayerPush]);
+          }
         });
-      })
+      });
     </script>
     <div class="container">
       <h1 class="cover-heading text-center">Testovací Ecommerce dataLayer pushe</h1>
