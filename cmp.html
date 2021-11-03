@@ -36,7 +36,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <p>Do vlastního GTM ji přidáte jednoduše pomocí importu <strong>kontejneru</strong>. Jakmile tento proces dokončíte, budete mít k dispozici jeden nový tag a jednu novou proměnnou.<br>
 Pomocí tagu si mužete nastavit libovolnou skupinu souhlasů (včetně vlastních) na základě libolvoných dat/proměnných, které máte k dispozici.<br><br>
 Template je náhradou jinak potřebné implementace volání gtag příkazů consent-default a consent-update<br>
-<code>
+<pre><code>
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 
@@ -44,17 +44,17 @@ gtag('consent', 'default', {
   'ad_storage': 'denied',
   'analytics_storage': 'denied'
 });
-</code>
+</code></pre>
 <br>
 S jeho pomocí můžete nastavit všechny dostupné funkce:<br>
 <ul>
 	<li>Default
 		<ul>
-			<li>ad_storage</li>
-			<li>analytics_storage</li>
-			<li>functionality_storage</li>
-			<li>personalization_storage</li>
-			<li>security_storage</li>
+			<li><code>ad_storage</code></li>
+			<li><code>analytics_storage</code></li>
+			<li><code>functionality_storage</code></li>
+			<li><code>personalization_storage</code></li>
+			<li><code>security_storage</code></li>
 			<li>- libovolný vlastní typ souhlasu</li>
 		</ul><br>
 		<ul>
@@ -65,11 +65,11 @@ S jeho pomocí můžete nastavit všechny dostupné funkce:<br>
 	<li>
 		Update
 		<ul>
-			<li>ad_storage</li>
-			<li>analytics_storage</li>
-			<li>functionality_storage</li>
-			<li>personalization_storage</li>
-			<li>security_storage</li>
+			<li><code>ad_storage</code></li>
+			<li><code>analytics_storage</code></li>
+			<li><code>functionality_storage</code></li>
+			<li><code>personalization_storage</code></li>
+			<li><code>security_storage</code></li>
 			<li>- libovolný vlastní typ souhlasu</li>
 		</ul>
 	</li>
