@@ -1,10 +1,99 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<title>General Consent Mode Settings for GTM by Signals.cz</title>
-</head>
-<body>
-	<iframe src="https://coda.io/embed/DAq1pLN2jx" width=900 height=500 style="max-width: 100%;" allow="fullscreen"></iframe>
-</body>
+
+<!doctype html>
+<html lang="cs">
+  <head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://sgtm.signals.cz/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WDZMNLK');</script>
+<!-- End Google Tag Manager -->
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Signals</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/dist/css/cover.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <a name="home"></a>
+    <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
+<div class="container">
+<h1 class="cover-heading text-center"><img src="./gfx/Signals-Vodorovne.svg" class="img-fluid"></h1>
+<a name="description"></a>
+<h2>General Consent Mode Settings - Template for GTM</h2>
+<p>Jelikož jsme v praxi zjistili, že většina template poskytovaných přímo výrobci jednotlivých CMP nástrojů je tak trochu nedostatečná, rozhodli jsme si ji vyrobit sami.</p>
+
+<p>Do vlastního GTM ji přidáte jednoduše pomocí importu <strong>kontejneru</strong>. Jakmile tento proces dokončíte, budete mít k dispozici jeden nový tag a jednu novou proměnnou.<br>
+Pomocí tagu si mužete nastavit libovolnou skupinu souhlasů (včetně vlastních) na základě libolvoných dat/proměnných, které máte k dispozici.<br><br>
+Template je náhradou jinak potřebné implementace volání gtag příkazů consent-default a consent-update<br>
+<code>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+
+gtag('consent', 'default', {
+  'ad_storage': 'denied',
+  'analytics_storage': 'denied'
+});
+</code>
+<br>
+S jeho pomocí můžete nastavit všechny dostupné funkce:<br>
+<ul>
+	<li>Default
+		<ul>
+			<li>ad_storage</li>
+			<li>analytics_storage</li>
+			<li>functionality_storage</li>
+			<li>personalization_storage</li>
+			<li>security_storage</li>
+			<li>- libovolný vlastní typ souhlasu</li>
+		</ul><br>
+		<ul>
+			<li>Regionální souhlasy</li>
+			<li>Wait For Update nastavení</li>
+		</ul>
+	</li>
+	<li>
+		Update
+		<ul>
+			<li>ad_storage</li>
+			<li>analytics_storage</li>
+			<li>functionality_storage</li>
+			<li>personalization_storage</li>
+			<li>security_storage</li>
+			<li>- libovolný vlastní typ souhlasu</li>
+		</ul>
+	</li>
+
+</ul>
+</p>
+
+
+  
+<a name="contact"></a>
+<h2>Signals s.r.o.</h2>
+<p>Chrastavská 95/80<br />
+190 00 Praha 9 – Střížkov</p>
+
+<p>
+IČO: 08971251<br />
+DIČ: CZ08971251<br /></p>
+
+<p>Spisová značka: C 328404 vedená u Městského soudu v Praze</p>
+
+      </div>
+
+    </div>
+
+    <script src="./dist/js/bootstrap.min.js"></script>
+  </body>
 </html>
