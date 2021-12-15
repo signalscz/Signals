@@ -2,7 +2,10 @@
 <!doctype html>
 <html lang="cs">
   <head>
-    <script>window.dataLayer.push({'event':'before.gtm'});</script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({'event':'before.gtm'});
+    </script>
 
     <!-- Začátek oznámení o souhlasu s používáním souborů cookie pro doménu ceskatelevize.cz -->
     <script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js"  type="text/javascript" charset="UTF-8" data-domain-script="f2f812b2-4ffd-4d22-9bea-92bae0e38431-test" ></script>
@@ -18,7 +21,7 @@
     <!-- Konec oznámení o souhlasu s používáním souborů cookie pro doménu ceskatelevize.cz -->  
     
     <script>window.dataLayer.push({'event':'after.gtm'});</script>
-    
+
     
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
