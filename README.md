@@ -2,8 +2,8 @@
 
 123@signals.cz
 
-Chrastavská 95/80
-190 00, Praha 9 - Střížkov
+Hlučkova 813/14
+199 00, Praha 18 - Letňany
 
 IČO: 08971251  
 DIČ: CZ08971251  
