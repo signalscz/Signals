@@ -1,0 +1,54 @@
+
+<!doctype html>
+<html lang="cs">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Signals</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="./dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="./dist/css/cover.css" rel="stylesheet">
+  </head>
+
+
+  <body>
+    <a name="home"></a>
+    <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
+        <div class="container">
+            <form id="my_form">
+                <div class="form-group">
+                    <label>Name</label>
+                    <input class="form-control" id="name" placeholder="Enter name">
+                  </div>
+                <div class="form-group">
+                  <label>Surname</label>
+                  <input class="form-control" id="surname" placeholder="Enter surname">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+  </body>
+
+  <script>
+    const form  = document.getElementById('my_form');
+    form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        console.log(form.elements["name"].value);
+        console.log(form.elements["surname"].value);
+
+        window.parent.postMessage({
+      "dataLayerPush": {
+        "event": "iframe_event",
+        "value": form.elements["name"].value
+      }
+    }, "*");
+    });
+  </script>
+</html>
