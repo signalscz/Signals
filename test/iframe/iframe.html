@@ -40,13 +40,12 @@
     const form  = document.getElementById('my_form');
     form.addEventListener('submit', (event) => {
         event.preventDefault();
-        console.log(form.elements["name"].value);
-        console.log(form.elements["surname"].value);
 
         window.parent.postMessage({
       "dataLayerPush": {
         "event": "iframe_event",
-        "value": form.elements["name"].value
+        "name": form.elements["name"].value,
+        "surname": form.elements["surname"].value
       }
     }, "*");
     });
