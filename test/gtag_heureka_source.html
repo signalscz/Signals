@@ -8,7 +8,7 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   
-  if(document.referrer.match(/^.*\.(?=(heureka\.(cz|sk)))/g) !== null){
+  if(document.referrer.match(/^.*\.(?=(heureka\.(cz|sk)|hledejceny\.cz|porovnani-ceny\.cz|naakup\.cz))/g) !== null){
     gtag('set', {
     'campaign_source': 'heureka.cz',
     'campaign_medium': 'referral',
