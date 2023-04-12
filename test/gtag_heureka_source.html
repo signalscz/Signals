@@ -8,12 +8,14 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   
-  //if(document.referrer.match(/^.*\.(?=(heureka\.(cz|sk)|hledejceny\.cz|porovnani-ceny\.cz|naakup\.cz))/g) !== null){
+  var referrer = 'https://leky-volne-prodejne.heureka.cz/';
+  var matches = referrer.match(/(heureka\.(cz|sk)|hledejceny\.cz|porovnani-ceny\.cz|naakup\.cz)/g);
+ 
+  if(matches !== null){
     gtag('set', {
-    'campaign_source': 'heureka.cz',
-    //'campaign_medium': 'referral',
+    'campaign_source': matches[0],
     });
-  //}
+  }
 
   gtag('config', 'G-RWHZVYF26R');
 </script>
