@@ -11,14 +11,25 @@
   var referrer = 'https://leky-volne-prodejne.heureka.cz/';
   var matches = referrer.match(/(heureka\.(cz|sk)|hledejceny\.cz|porovnani-ceny\.cz|naakup\.cz)/g);
  
-  if(matches !== null){
-    gtag('set', {
-    'campaign_source': matches[0],
-    'page_referrer': referrer
-    });
-  }
+  //if(matches !== null){
+  //  gtag('set', {
+  //  'campaign_source': matches[0],
+  //  'page_referrer': referrer
+  //  });
+  //}
 
   gtag('config', 'G-9KPD1RDTD1');
+  
+  var gtag_page_params = {};
+  if(matches !== null){
+    gtag_page_params = {
+      'campaign_source': matches[0],
+      'page_referrer': referrer
+    }
+  }
+  
+  gtag('event', 'page_view', gtag_page_params);
+
 </script>
 
     <meta charset="utf-8">
