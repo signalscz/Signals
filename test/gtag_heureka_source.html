@@ -7,12 +7,14 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
-  var matches = document.referrer.match(/(heureka\.(cz|sk)|hledejceny\.cz|porovnani-ceny\.cz|naakup\.cz)/g);
+  
+  var referrer = 'https://leky-volne-prodejne.hledejceny.cz/';
+  var matches = referrer.match(/(heureka\.(cz|sk)|hledejceny\.cz|porovnani-ceny\.cz|naakup\.cz)/g);
  
   if(matches !== null){
     gtag('set', {
     'campaign_source': matches[0],
+    'page_referrer': referrer
     });
   }
 
